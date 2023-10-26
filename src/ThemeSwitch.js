@@ -1,6 +1,6 @@
 /**
  * Inspired by Adam Argyle's theme switcher https://web.dev/articles/building/a-theme-switch-component
- * 
+ *
  * @element theme-switch
  * @cssproperty --size - size of the switch
  * @cssproperty --icon-fill-dark - icon color in dark theme
@@ -94,7 +94,9 @@ export class ThemeSwitch extends LitElement {
       }
 
       & > .sun-beams {
-        transition: transform 0.5s cubic-bezier(0.5, 1.5, 0.75, 1.25), opacity 0.5s cubic-bezier(0.25, 0, 0.3, 1);
+        transition:
+          transform 0.5s cubic-bezier(0.5, 1.5, 0.75, 1.25),
+          opacity 0.5s cubic-bezier(0.25, 0, 0.3, 1);
       }
 
       & .moon > circle {
@@ -122,10 +124,6 @@ export class ThemeSwitch extends LitElement {
   static properties = {
     storageKey: { type: String },
     theme: { type: String, state: true },
-    iconFillLight: { type: String },
-    iconFillDark: { type: String },
-    iconFillLightHover: { type: String },
-    iconFillDarkHover: { type: String },
   };
 
   constructor() {
@@ -137,7 +135,9 @@ export class ThemeSwitch extends LitElement {
   getColorPreference() {
     let theme = localStorage.getItem(this.storageKey);
     if (!theme) {
-      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
     }
     return theme;
   }
@@ -158,10 +158,12 @@ export class ThemeSwitch extends LitElement {
     window.onload = () => {
       this.reflectPreference();
     };
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ({ matches: isDark }) => {
-      this.theme = isDark ? 'dark' : 'light';
-      this.setPreference();
-    });
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', ({ matches: isDark }) => {
+        this.theme = isDark ? 'dark' : 'light';
+        this.setPreference();
+      });
   }
 
   onClick() {
@@ -180,8 +182,21 @@ export class ThemeSwitch extends LitElement {
         aria-live="polite"
         @click=${this.onClick}
       >
-        <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-          <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+        <svg
+          class="sun-and-moon"
+          aria-hidden="true"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="sun"
+            cx="12"
+            cy="12"
+            r="6"
+            mask="url(#moon-mask)"
+            fill="currentColor"
+          />
           <g class="sun-beams" stroke="currentColor">
             <line x1="12" y1="1" x2="12" y2="3" />
             <line x1="12" y1="21" x2="12" y2="23" />

@@ -6,6 +6,8 @@ This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) reco
 
 ```bash
 npm i theme-switch
+Or
+yarn add theme-switch
 ```
 
 ## Usage
@@ -15,7 +17,16 @@ npm i theme-switch
   import 'theme-switch/theme-switch.js';
 </script>
 
-<theme-switch></theme-switch>
+<theme-switch 
+  style="
+    --size: 2rem;
+    --icon-fill-dark: #801515;
+    --icon-fill-dark-hover: #AA3939;
+    --icon-fill-light: #D46A6A;
+    --icon-fill-light-hover: #FFAAAA;
+    "
+/>
+            
 ```
 
 ## Linting and formatting
