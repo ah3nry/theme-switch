@@ -14,14 +14,14 @@ import { html, css, LitElement } from 'lit';
 export class ThemeSwitch extends LitElement {
   static styles = css`
     .theme-toggle {
-      --size: var(--size);
-      --icon-fill: var(--icon-fill-dark);
-      --icon-fill-hover: var(--icon-fill-dark-hover);
+      --icon-size: var(--size);
+      --icon-fill: var(--icon-fill-light);
+      --icon-fill-hover: var(--icon-fill-light-hover);
       background: none;
       border: none;
       padding: 0;
-      inline-size: var(--size);
-      block-size: var(--size);
+      inline-size: var(--icon-size);
+      block-size: var(--icon-size);
       aspect-ratio: 1;
       border-radius: 50%;
       cursor: pointer;
@@ -63,8 +63,8 @@ export class ThemeSwitch extends LitElement {
       }
 
       [data-theme='dark'] & {
-        --icon-fill: var(--icon-fill-light);
-        --icon-fill-hover: var(--icon-fill-light-hover);
+        --icon-fill: var(--icon-fill-dark);
+        --icon-fill-hover: var(--icon-fill-dark-hover);
         & > .sun {
           transform: scale(1.75);
           transition-timing-function: cubic-bezier(0.25, 0, 0.3, 1);
