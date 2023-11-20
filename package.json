@@ -61,5 +61,13 @@
     ]
   },
   "homepage": "https://github.com/ah3nry/theme-switch",
-  "keywords": ["webcomponents", "lit-element", "theme-switch"]
+  "keywords": [
+    "webcomponents",
+    "lit-element",
+    "theme-switch"
+  ],
+  "volta": {
+    "node": "18.18.2",
+    "yarn": "3.6.4"
+  }
 }
