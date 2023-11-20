@@ -34,10 +34,6 @@ export class ThemeSwitch extends LitElement {
         block-size: 100%;
         stroke-linecap: round;
       }
-
-      @media (hover: none) {
-        --size: 48px;
-      }
     }
 
     .sun-and-moon {
